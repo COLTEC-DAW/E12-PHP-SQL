@@ -3,23 +3,39 @@
 require_once "../models/Categoria.php";
 require_once "../Connection.php";
 
-class TenistaDAO {
+class CategoriaDAO {
 
     public static function getCategorias() {
-        $categoriasArray = [];
+        $categoriasArray = array();
         
         $con = Connection::getConnection(); 
         $stmt = $con->prepare("SELECT id, nome FROM categorias");
         if ($stmt->execute()) {
             if ($stmt->rowCount() > 0) {
-                $row = $stmt->fetch(PDO::FETCH_OBJ);
-
-                $categoriasArray = new Categoria($row->id, 
-                                            $row->nome);
+                while($row = $stmt->fetch(PDO::FETCH_OBJ)){
+                    $categoria = new Categoria($row->id, 
+                                                $row->nome);
+                    
+                    array_push($categoriasArray, $categoria);
+                }
             }
         }
 
         return $categoriasArray;
+    }
+
+    public static function getIdCategoriaByName($name) {
+       
+        $con = Connection::getConnection(); 
+        $stmt = $con->prepare("SELECT id FROM categorias where nome = ?");
+        $stmt->bindParam(1, $name);
+        if ($stmt->execute()) {
+            if ($stmt->rowCount() > 0) {
+                $row = $stmt->fetch(PDO::FETCH_OBJ);
+
+                return $row->id;
+            }
+        }
     }
 }
 

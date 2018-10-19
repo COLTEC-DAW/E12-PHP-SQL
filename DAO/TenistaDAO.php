@@ -43,6 +43,56 @@ class TenistaDAO {
 
         return $tenistasArray;
     }
+
+    public static function createTenista(Tenista $tenista) {
+        try {
+            $con = Connection::getConnection();
+
+            $stmt = $con->prepare("INSERT INTO tenistas(id, nome, data_nascimento, sexo, categorias_id) VALUES(?,?,?,?,?)");
+
+            // $id = $tenista->getId();
+            // $stmt->bindParam(1, $id);
+
+            // $name = $tenista->getNome();
+            // $stmt->bindParam(2, $name);
+
+            // $data_nascimento = $tenista->getDataNascimento();
+            // $stmt->bindParam(3, $data_nascimento);
+
+            // $sexo = $tenista->getSexo();
+            // $stmt->bindParam(4, $sexo);
+
+            // $categoria = $tenista->getCategoria();
+            // $stmt->bindParam(5, $categoria);
+
+            $stmt->execute([ 
+                $tenista->getId(),
+                $tenista->getNome(),
+                $tenista->getDataNascimento(),
+                $tenista->getSexo(),
+                $tenista->getCategoria(),
+                ]);
+        } catch(PDOException $e){
+            echo 'Error: ' . $e->getMessage();
+        }
+        
+    }
+
+    public static function getMaxId(){
+        $con = Connection::getConnection();
+
+        $stmt = $con->prepare("SELECT id FROM tenistas ORDER BY id DESC LIMIT 1");
+
+        if($stmt->execute()) {
+            if ($stmt->rowCount() > 0) {
+                while ($row = $stmt->fetch(PDO::FETCH_OBJ)) {
+                    return $row->id +1;
+                }
+            } else {
+                return 1;
+            }
+        }
+    }
 }
 
 ?>
