@@ -7,9 +7,9 @@
     if(isset($_POST["nome"])) {
 
         if($_POST["sexo"] == "Masculino") {
-            $sexo = (bool)1;
+            $sexo = (int)1;
         } else {
-            $sexo = (bool)0;
+            $sexo = (int)0;
         }
 
         $tenista = new Tenista(TenistaDAO::getMaxId(), $_POST["nome"], $_POST["data_nascimento"], $sexo, intVal($_POST["categoria_nome"]));  
