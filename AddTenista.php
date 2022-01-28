@@ -17,7 +17,7 @@
     <title>Add</title>
 
     <!-- Estilo -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="s_style.css">
 </head>
 <body>
     <h2>Outras funcionalidades:</h2>
@@ -36,7 +36,7 @@
         <input type="text" name="Nome" id=""> <br>
 
         <label for="id">Data de nascimento:</label> <br>
-        <input type="text" name="DataNascimento" id=""> <br>
+        <input type="date" name="DataNascimento" id=""> <br>
 
         <label for="id">Sexo(0 p/ homem & 1 p/ mulher):</label> <br>
         <input type="text" name="Sexo" id=""> <br>

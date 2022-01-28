@@ -13,10 +13,10 @@
                 "{$new_Tenista->get_Id()}, " .
                 "\"{$new_Tenista->get_Nome()}\"," .
                 "\"{$new_Tenista->get_DataNascimento()}\", " .
-                "\"{$new_Tenista->get_Sexo()}\", " .
+                "{$new_Tenista->get_Sexo()}, " .
                 "\"{$new_Tenista->get_Id_Categoria()}\"" .
             ")";
-
+            
             return mysqli_query($this->connection, $query);
         }
 

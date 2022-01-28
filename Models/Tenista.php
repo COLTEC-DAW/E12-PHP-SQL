@@ -10,7 +10,7 @@
             $this->Id = $id;
             $this->Nome = $nome;
             $this->DataNascimento = $dataNascimento;
-            $this->Sexo = (int)$sexo;
+            $this->Sexo = $sexo;
             $this->Id_Categoria = $id_Categoria;
         }
 
