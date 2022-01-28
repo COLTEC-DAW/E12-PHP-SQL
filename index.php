@@ -1,9 +1,11 @@
 <?php
+    include "conexao.php";
+    include "conexaoDAO.php";
+    $conexao = new Conexao();
+    $conexaoDAO = new ConexaoDAO($conexao->getConnection());
 
-    $conexao = mysqli_connect("localhost", "root", "", "federacao_tenis");
-    $resultado = mysqli_query($conexao, "SELECT * FROM tenistas");
-    $numero_de_tenistas = mysqli_num_rows($resultado);
-    mysqli_close($conexao);
+    $tenistas = $conexaoDAO->getAll();
+    
 ?>
 
 <!DOCTYPE html>
@@ -17,16 +19,15 @@
 <body>
     <h1>Federação Tenis</h1>
     <?php
-        for($i = 0; $i < $numero_de_tenistas; $i++)
+        foreach($tenista as $tenistas)
         {
-            $row = mysqli_fetch_array($resultado);
     ?>
             <p>
-                <?= $row["id"]."\n"; ?>
-                <?= $row["nome"]."\n"; ?>
-                <?= $row["data_nascimento"]."\n"; ?>
-                <?= $row["sexo"]."\n"; ?>
-                <?= $row["categorias_id"]."\n"; ?>
+                <?= $tenista->get_id()?>
+                <?= $tenista->get_nome()?>
+                <?= $tenista->get_data_nascimento()?>
+                <?= $tenista->get_sexo()?>
+                <?= $tenista->get_categorias_id()?>
             </p>
     <?php
         }
