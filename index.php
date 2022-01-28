@@ -1,7 +1,7 @@
 <?php
 
     $conexao = mysqli_connect("localhost", "root", "", "federacao_tenis");
-    $resultado = mysqli_query($conexao, "SELECT * FROM tenistas t JOIN categorias c ON t.categorias_id LIKE c.id");
+    $resultado = mysqli_query($conexao, "SELECT * FROM tenistas");
     $numero_de_tenistas = mysqli_num_rows($resultado);
     mysqli_close($conexao);
 ?>
