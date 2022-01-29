@@ -109,7 +109,7 @@
                             <div class="form-check">
                                 <input name="sexo" class="form-check-input" type="radio" value="0" name="flexRadioDefault">
                                 <label class="form-check-label">
-                                    Não Binário
+                                    Outro
                                 </label>
                             </div>
                         </div>

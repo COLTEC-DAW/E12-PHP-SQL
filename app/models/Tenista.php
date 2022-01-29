@@ -49,7 +49,7 @@ class Tenista {
             return "Feminino";
         }
         else {
-            return "Não Binário";
+            return "Outro";
         }
     }
 }
