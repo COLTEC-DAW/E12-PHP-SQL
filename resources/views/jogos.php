@@ -45,42 +45,5 @@
             <tbody>
         </table>
     <div>
-    
-    <form id="tenista-form" class="modal">
-        <div class="mb-3">
-            <label class="form-label">Email address</label>
-            <input type="email" class="form-control">
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Password</label>
-            <input type="password" class="form-control">
-        </div>
-        <select class="form-select" aria-label="Default select example">
-        <?php 
-            for ($i = 1; $i <= count($categorias); $i++){
-                echo '<option value="'. $i .'">'. $categorias[$i - 1]->getNome() . '</option>';
-            }
-        ?>
-        </select>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" value="-1" name="flexRadioDefault">
-            <label class="form-check-label">
-                Masculino
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" value="1" name="flexRadioDefault">
-            <label class="form-check-label">
-                Feminino
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" value="0" name="flexRadioDefault">
-            <label class="form-check-label">
-                Não Binário
-            </label>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
 </body>
 </html>
