@@ -12,7 +12,7 @@
         $data_nasc = $_POST["data_nasc"];
         $cat = $_POST["categoria"];
         $res_insert = mysqli_query($conexao, "INSERT INTO tenistas (nome,data_nascimento,genero,categorias_id) VALUES ("."\"$nome\", "."\"$data_nasc\", "."$genero, "."$cat".")");
-        header('location: teste.php');
+        header('location: index.php');
     }
     //Selecao
     $resultado = mysqli_query($conexao, "SELECT tenistas.nome, tenistas.data_nascimento, tenistas.genero, categorias.nome AS categoria_nome FROM tenistas JOIN categorias ON tenistas.categorias_id = categorias.id");
