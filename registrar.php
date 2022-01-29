@@ -24,7 +24,7 @@
 
         <h2>Registrar Novo/a Jogador/ra</h2>
 
-        <form action="teste.php" method="post" id="form-registrar">
+        <form action="index.php" method="post" id="form-registrar">
             Nome: <input type="text" name="nome" placeholder="Nome do tenista" autocomplete="off">
             Categoria: <select name="categoria">
                 <?php for ($i = 0; $i < $num; $i ++){
