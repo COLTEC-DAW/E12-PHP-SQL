@@ -1,0 +1,93 @@
+body {
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    position: relative;
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+nav ul {
+    display: flex;
+}
+
+.container {
+    width: 1167px;
+    max-width: 100vw;
+}
+#main-list {
+    width: 100%;
+    height: 500px;
+    overflow-y: scroll;
+    list-style-type: none;
+    padding-inline-start: 0px;
+}
+
+#main-list #input {
+    border: 1px solid;
+}
+
+li {
+    display: grid;
+    grid-template-areas: 'nome nome cat' 'gen data data';
+    list-style-position: outside;
+    border: 1px solid gray;
+    border-radius: 0.5rem;
+    margin: 2px;
+    padding: 8px;
+}
+li .nome-tenista {
+    grid-area: nome;
+    text-align: left;
+}
+li .categoria {
+    grid-area: cat;
+    text-align: right;
+}
+li .genero {
+    grid-area: gen;
+    text-align: left;
+}
+li .data-nasc {
+    grid-area: data;
+    text-align: right;
+}
+
+#desc-input {
+    resize: vertical;
+    overflow: auto;
+    width: 60%;
+    min-height: 4rem;
+    vertical-align: text-top;
+}
+#search-input {
+    width: 300px;
+}
+
+#versus {
+    text-align: center;
+}
+
+table {
+    table-layout: auto;
+    width: 100%;
+}
+
+.jogo-card {
+    margin: 10px;
+    padding: 8px;
+    border: 1px solid gray;
+    border-radius: 0.5rem; 
+}
+
+.score {
+    text-align: center;
+    background-color: black;
+    color: white;
+    border-radius: 50%;
+    font-size: 1.1rem;
+}
