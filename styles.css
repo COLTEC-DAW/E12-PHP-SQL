@@ -1,0 +1,68 @@
+th, td, .border {
+    border: 1px solid black;
+    text-align: center;
+}
+
+.no-border {
+    border: 0px;
+}
+
+table table, td input, td select, .width-over1 {
+    width: 100%;
+}
+
+.width-over2 {
+    width: 50%;
+}
+
+.width-over3 {
+    width: 33%;
+}
+
+.width-over4 {
+    width: 25%;
+}
+
+.width-over5 {
+    width: 20%;
+}
+
+.width-over6 {
+    width: 18%;
+}
+
+.width-over10 {
+    width: 10%;
+}
+
+.width-1seventh {
+    width: 14%;
+}
+
+.width-2sevenths {
+    width: 28%;
+}
+
+.width-3sevenths {
+    width: 42%;
+}
+
+.width-4sevenths {
+    width: 57%;
+}
+
+.width-5sevenths {
+    width: 71%;
+}
+
+.width-6sevenths {
+    width: 85%;
+}
+
+.max-width {
+    width: 750px;
+}
+
+.no-width {
+    width: auto;
+}
