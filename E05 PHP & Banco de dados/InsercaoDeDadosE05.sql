@@ -1,4 +1,4 @@
-USE DawE05;
+USE ex_05;
 
 /*Inserção de Dados*/
 
@@ -41,3 +41,9 @@ INSERT INTO jogos(tenista_01_id, tenista_02_id, campeonatos_id, publico, pontuac
 	VALUES (3, 2, 1, 250, 11, 7, 2);
     
 SELECT * FROM jogos;
+SELECT t1.nome AS tenista_01_id, t2.nome AS tenista_02_id, c.nome AS campeonatos_id, j.publico, j.pontuacao_tenista_01, j.pontuacao_tenista_02, q.tipo AS quadras_id
+FROM jogos j
+JOIN tenistas t1 ON j.tenista_01_id = t1.id
+JOIN tenistas t2 ON j.tenista_02_id = t2.id
+JOIN campeonatos c ON j.campeonatos_id = c.id
+JOIN quadras q ON j.quadras_id = q.id;

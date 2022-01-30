@@ -1,5 +1,5 @@
-CREATE DATABASE DawE05;
-USE DawE05;
+CREATE DATABASE ex_05;
+USE ex_05;
 
 /*Criação do BD*/
 
